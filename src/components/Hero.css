@@ -1,0 +1,329 @@
+.hero {
+  position: relative;
+  padding: 60px 0 16px; /* Reduced padding to fit components within viewport */
+  height: 100vh; /* Locked to viewport height */
+  min-height: 580px; /* Reduced minimum height to ensure it fits laptops */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.hero-bg-visual {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.hero-bg-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 580px 1fr; /* Reduced from 660px to make the player width narrower */
+  gap: 40px;
+  align-items: center; /* Center elements vertically in viewport */
+  height: 100%;
+  width: 100%;
+}
+
+.hero-copy {
+  padding-left: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-heading {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 4.2vw, 48px); /* Slightly reduced to keep it compact and clear of the background cross */
+  line-height: 1.15;
+  letter-spacing: 0.005em;
+  margin: 0 0 12px; /* Reduced from 20px to save height */
+  font-weight: 900;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.9)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+}
+
+.line-white,
+.line-gold {
+  display: block;
+}
+
+.line-white {
+  color: #ffffff;
+}
+
+.line-gold {
+  background: linear-gradient(120deg, #fff4d1 0%, #ffc107 50%, #ff8f00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hero Divider Ornament & Tuner Card Wrapper */
+.hero-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 320px;
+  margin: 0 0 16px;
+}
+
+.hero-div-line-left,
+.hero-div-line-right {
+  flex: 1;
+  height: 1.5px;
+}
+
+.hero-div-line-left {
+  background: linear-gradient(90deg, transparent, rgba(246, 185, 59, 0.5) 80%, var(--accent-gold));
+}
+
+.hero-div-line-right {
+  background: linear-gradient(90deg, var(--accent-gold), rgba(246, 185, 59, 0.5) 20%, transparent);
+}
+
+.hero-div-star {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--accent-gold);
+  text-shadow: 0 0 10px rgba(246, 185, 59, 0.6);
+  letter-spacing: 0.1em;
+}
+
+.hero-tuner-card-wrapper {
+  width: 320px;
+  height: 100px;
+  transform: scale(0.55);
+  transform-origin: top left;
+  margin-bottom: 24px;
+}
+
+.hero-tuner-card-wrapper .tuner {
+  width: 580px !important;
+  height: 178px !important;
+}
+
+.hero-subtitle-desc {
+  font-family: var(--font-ui);
+  font-size: clamp(14px, 2.5vw, 15.5px);
+  color: #ffffff;
+  line-height: 1.65;
+  max-width: 440px;
+  margin: 12px 0 16px 0; /* Reduced to save vertical height and pull player upward */
+  font-weight: 600;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 980px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .hero-copy { 
+    text-align: left; 
+    padding-left: 0;
+  }
+  .hero-tuner-card-wrapper {
+    transform-origin: top center;
+    margin: 0 auto 24px;
+  }
+  .hero-divider {
+    margin: 0 auto 16px;
+  }
+  .hero-subtitle-desc {
+    margin: 0 auto 24px;
+    text-align: center;
+  }
+}
+
+.btn-hero-live {
+  background: linear-gradient(135deg, var(--accent-gold-bright), var(--accent-gold)) !important;
+  color: #05070b !important;
+  box-shadow: 0 0 20px rgba(245, 185, 66, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  font-weight: 800;
+  border-radius: 999px !important;
+}
+
+.btn-hero-live:hover {
+  box-shadow: 0 0 30px rgba(245, 185, 66, 0.7);
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+.btn-hero-explore {
+  border-radius: 999px !important;
+  border: 1px solid var(--accent-gold) !important;
+  color: var(--text-main) !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+}
+
+.btn-hero-explore:hover {
+  background: rgba(245, 185, 66, 0.1) !important;
+  color: var(--accent-gold) !important;
+}
+
+.hero-tuner-inline {
+  margin-top: 36px;
+  max-width: 530px;
+  position: relative;
+  z-index: 5;
+}
+
+@media (max-width: 980px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .hero-copy {
+    padding-left: 0;
+  }
+  .hero-tuner-inline {
+    margin-top: 24px;
+    max-width: 100%;
+  }
+}
+
+/* Bible Verse Right Column Styling */
+.hero-verse-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Align the card to the bottom to maximize the gap below the dove */
+  align-items: flex-end;
+  height: 100%;
+  padding-top: 0; /* Reset top padding to prevent clipping */
+  padding-bottom: 56px; /* Reduced from 76px to fit within the viewport */
+  padding-left: 20px;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
+
+.hero-verse-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: rgba(10, 12, 19, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 24px 28px;
+  border-radius: 16px;
+  border: 1px solid rgba(245, 185, 66, 0.28);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 
+              0 0 25px rgba(245, 185, 66, 0.12),
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  max-width: 660px;
+  margin-top: 64px; /* Increased margin-top to push the card down and clear the dove */
+  transition: all 0.3s ease;
+}
+
+.hero-verse-container:hover {
+  border-color: rgba(245, 185, 66, 0.45);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7), 
+              0 0 30px rgba(245, 185, 66, 0.18);
+  transform: translateY(-2px);
+}
+
+.verse-section {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+}
+
+.verse-left-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bible-icon-svg {
+  width: 22px;
+  height: 22px;
+  color: var(--accent-gold);
+  filter: drop-shadow(0 0 4px rgba(245, 185, 66, 0.4));
+  flex-shrink: 0;
+}
+
+.verse-vertical-bar {
+  width: 1px;
+  background: rgba(245, 185, 66, 0.25);
+  align-self: stretch;
+  margin: 4px 0;
+}
+
+.verse-content-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.verse-text-body {
+  margin: 0;
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  text-align: left;
+}
+
+.verse-text-body.en-text {
+  white-space: nowrap;
+}
+
+.verse-text-body.ta-text {
+  white-space: normal;
+}
+
+.verse-citation {
+  color: var(--accent-gold);
+  font-weight: 700;
+  margin-left: 10px;
+  font-size: 11.5px;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+  text-shadow: 0 0 8px rgba(245, 185, 66, 0.2);
+}
+
+.verse-separator-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 4px 0;
+}
+
+.separator-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245, 185, 66, 0.2) 50%, transparent);
+}
+
+.separator-diamond {
+  font-size: 10px;
+  color: var(--accent-gold);
+  opacity: 0.8;
+  filter: drop-shadow(0 0 3px rgba(245, 185, 66, 0.5));
+}
+
+@media (max-width: 980px) {
+  .hero-verse-col {
+    padding-top: 40px;
+    padding-left: 0;
+    padding-right: 0;
+    align-items: center;
+  }
+  .hero-verse-container {
+    max-width: 100%;
+  }
+  .verse-text-body {
+    white-space: normal;
+    text-align: center;
+  }
+}

@@ -1,0 +1,394 @@
+/* Container and general alignment rules */
+.split-deck-section {
+  margin-top: 10px; /* Reduced from 12px */
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  align-self: center;
+}
+
+.split-layout-container {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  align-items: stretch;
+}
+
+/* ==========================================
+   LEFT COLUMN: Split Active Card
+   ========================================== */
+.split-active-card {
+  flex: 1.5;
+  background: rgba(14, 16, 26, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(245, 185, 66, 0.45); /* Highlighted Gold Border */
+  border-radius: 16px;
+  padding: 12px; /* Tighter padding to save space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  height: 180px; /* Increased from 160px to fit description */
+  box-sizing: border-box;
+}
+
+.active-inner-motion {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.active-top-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 12px;
+}
+
+/* Left: visual circular box (Antenna or logo) */
+.active-visual-column {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.active-antenna-box {
+  width: 54px; /* Reduced from 66px */
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(245, 185, 66, 0.05);
+  border: 1.5px solid rgba(245, 185, 66, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-gold);
+}
+
+.active-antenna-svg {
+  width: 30px; /* Reduced from 36px */
+  height: 30px;
+  filter: drop-shadow(0 0 4px rgba(245, 185, 66, 0.25));
+}
+
+.active-logo-circle {
+  width: 54px; /* Reduced from 66px */
+  height: 54px;
+  border-radius: 50%;
+  border: 2.2px solid var(--theme-color);
+  box-shadow: 0 0 12px var(--theme-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #090a0f;
+}
+
+.active-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Center: Station Details */
+.active-details-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.active-title-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.active-station-title {
+  font-family: var(--font-heading);
+  font-size: 15px; /* Reduced from 16px */
+  font-weight: 850;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* Red Live Badge */
+.live-pill-badge {
+  background: #cf2a2a;
+  border-radius: 4px;
+  padding: 1px 4px;
+  font-size: 7.5px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  box-shadow: 0 2px 6px rgba(207, 42, 42, 0.4);
+}
+
+.active-freq-digits {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: 20px; /* Reduced from 22px */
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-top: 1px;
+  line-height: 1.1;
+}
+
+.active-freq-unit {
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+.active-live-tag {
+  font-size: 7.5px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.05em;
+  margin-top: 1px;
+}
+
+.active-desc-text {
+  font-family: var(--font-ui);
+  font-size: 10.5px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.72);
+  margin-top: 5px;
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Right: Control Circle Play Button */
+.active-play-column {
+  flex-shrink: 0;
+}
+
+.active-circle-toggle {
+  width: 36px; /* Reduced from 42px */
+  height: 36px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.8px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.active-circle-toggle:hover {
+  transform: scale(1.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.active-play-offset {
+  margin-left: 2px;
+}
+
+/* Bottom: Active Equalizer */
+.active-wave-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2px;
+  height: 12px; /* Reduced from 16px */
+  width: 100%;
+  margin-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 4px;
+}
+
+.active-eq-bar {
+  flex: 1;
+  border-radius: 1px;
+  opacity: 0.4;
+  min-height: 2px;
+}
+
+.active-eq-bar.pulsing {
+  opacity: 0.95;
+  animation: activeEqRise 0.5s ease-in-out infinite alternate;
+}
+
+.active-eq-bar.pulsing:nth-child(even) {
+  animation-duration: 0.35s;
+}
+
+@keyframes activeEqRise {
+  0% { height: 2px; }
+  100% { height: 11px; }
+}
+
+/* ==========================================
+   RIGHT COLUMN: Stacked Inactive Cards
+   ========================================== */
+.split-inactive-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 180px; /* Reduced from 220px to make the right side FMs smaller and narrower */
+  height: 180px; /* Match active card height (180px) */
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.inactive-deck-item {
+  background: rgba(14, 16, 26, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 4px 10px; /* Tighter padding for a smaller card */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  height: 85px; /* Increased from 75px to fit 180px space perfectly */
+  box-sizing: border-box;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.inactive-deck-item:hover {
+  background: rgba(14, 16, 26, 0.85);
+  transform: translateY(-1px);
+}
+
+.inactive-main-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px; /* Reduced gap */
+}
+
+/* Left: circular logo */
+.inactive-logo-avatar {
+  width: 32px; /* Reduced from 44px */
+  height: 32px; /* Reduced from 44px */
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  object-fit: cover;
+  flex-shrink: 0;
+  background: #ffffff; /* White background for Grace/Hope logo circular images */
+}
+
+/* Center: metadata */
+.inactive-meta-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.inactive-meta-block .inactive-title-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.inactive-name {
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 850;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+.inactive-freq-digits {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-top: 1px;
+}
+
+.inactive-freq-unit {
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.inactive-live-tag {
+  font-size: 8px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.04em;
+  margin-top: 1px;
+}
+
+/* Right: play circle triggers */
+.inactive-play-trigger {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.inactive-deck-item:hover .inactive-play-trigger {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.mini-play-offset {
+  margin-left: 1.5px;
+}
+
+/* Bottom: inactive visualizer wave */
+.inactive-wave-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2.2px;
+  height: 14px;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.inactive-eq-bar {
+  flex: 1;
+  border-radius: 1px;
+  min-height: 2px;
+}
+
+/* Symmetrical layouts for responsive screens */
+@media (max-width: 900px) {
+  .split-deck-section {
+    max-width: 100%;
+    margin-top: 16px;
+  }
+  .split-layout-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .split-active-card {
+    height: auto;
+  }
+  .split-inactive-column {
+    width: 100%;
+    height: auto;
+    gap: 12px;
+  }
+  .inactive-deck-item {
+    height: auto;
+    padding: 12px 16px;
+  }
+  .inactive-wave-container {
+    display: none;
+  }
+}

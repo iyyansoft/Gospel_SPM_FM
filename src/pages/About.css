@@ -1,0 +1,216 @@
+.about-page-wrapper.page-hero {
+  padding-top: 80px !important; /* Pull content further upward */
+  padding-bottom: 40px !important;
+  max-width: 95% !important; /* Fill full screen width from left to right */
+  width: 95% !important;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.about-main-heading {
+  text-transform: uppercase;
+  font-size: clamp(28px, 4vw, 36px);
+  margin-bottom: 24px;
+}
+
+.about-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 100% !important; /* Changed from 960px to fill the screen */
+  width: 100%;
+  margin-top: 10px;
+}
+
+.about-glass-card {
+  background: rgba(14, 16, 26, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45),
+              inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+.about-glass-card:hover {
+  transform: translateY(-2px);
+  background: rgba(14, 16, 26, 0.78);
+}
+
+/* Borders */
+.about-glass-card.border-gold {
+  border: 1.5px solid rgba(245, 185, 66, 0.3);
+}
+.about-glass-card.border-gold:hover {
+  border-color: #f5b942;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), 0 0 15px rgba(245, 185, 66, 0.15);
+}
+
+.about-glass-card.border-purple {
+  border: 1.5px solid rgba(168, 85, 247, 0.3);
+}
+.about-glass-card.border-purple:hover {
+  border-color: #a855f7;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), 0 0 15px rgba(168, 85, 247, 0.15);
+}
+
+.about-glass-card.border-red {
+  border: 1.5px solid rgba(239, 68, 68, 0.3);
+}
+.about-glass-card.border-red:hover {
+  border-color: #ef4444;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), 0 0 15px rgba(239, 68, 68, 0.15);
+}
+
+.about-glass-card.border-blue {
+  border: 1.5px solid rgba(59, 130, 246, 0.3);
+}
+.about-glass-card.border-blue:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), 0 0 15px rgba(59, 130, 246, 0.15);
+}
+
+/* Header inside card */
+.about-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.about-card-header h3 {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* Icons */
+.about-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.gold-glow {
+  background: rgba(245, 185, 66, 0.08);
+  border: 1.2px solid rgba(245, 185, 66, 0.3);
+  color: #f5b942;
+}
+
+.purple-glow {
+  background: rgba(168, 85, 247, 0.08);
+  border: 1.2px solid rgba(168, 85, 247, 0.3);
+  color: #a855f7;
+}
+
+.red-glow {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1.2px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+
+.blue-glow {
+  background: rgba(59, 130, 246, 0.08);
+  border: 1.2px solid rgba(59, 130, 246, 0.3);
+  color: #3b82f6;
+}
+
+/* Card Text */
+.about-glass-card p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: justify;
+}
+
+.about-glass-card p strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.about-glass-card p em {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  opacity: 0.95;
+  color: var(--accent-gold);
+}
+
+/* Responsive grid */
+@media (max-width: 768px) {
+  .about-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Single Large Tamil Panel matching the second image styling */
+.about-tamil-main-card {
+  background: rgba(10, 20, 38, 0.52); /* Translucent dark blue glass matching the second image precisely */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 32px 40px; /* Generous padding for full screen view */
+  margin-top: 10px;
+  margin-bottom: 32px;
+  max-width: 100%;
+  width: 100%;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.65),
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  box-sizing: border-box;
+}
+
+.about-tamil-title {
+  font-family: var(--font-ui);
+  font-size: 19px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.about-tamil-underline {
+  width: 50px;
+  height: 2px;
+  background-color: var(--accent-gold);
+  margin-top: 6px;
+  margin-bottom: 20px;
+  border-radius: 1px;
+}
+
+.about-tamil-paragraph {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: justify;
+  font-weight: 500;
+  max-width: 100% !important; /* Override generic page-hero p max-width of 620px */
+}
+
+.about-section-subtitle {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--accent-gold);
+  margin: 0 0 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+

@@ -1,0 +1,16 @@
+.channels-panel {
+  height: 100%;
+}
+
+.channels-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  padding: 18px;
+}
+
+@media (max-width: 700px) {
+  .channels-grid {
+    grid-template-columns: 1fr;
+  }
+}

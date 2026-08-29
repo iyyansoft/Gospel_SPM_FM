@@ -1,0 +1,35 @@
+.site-footer {
+  border-top: 1px solid var(--border-hair-soft);
+  padding: 24px 0 40px;
+  margin-top: 20px;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.footer-cross {
+  color: var(--accent-gold);
+  margin-right: 4px;
+  font-weight: bold;
+}
+
+.footer-link {
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: var(--accent-gold);
+}
+
+.footer-divider {
+  margin: 0 8px;
+  color: rgba(255, 255, 255, 0.12);
+}

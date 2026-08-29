@@ -1,0 +1,95 @@
+.verse-card {
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 210px;
+}
+
+.verse-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 220px 160px at 85% 100%, rgba(255, 176, 0, 0.16), transparent 70%);
+  pointer-events: none;
+}
+
+.verse-image-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 46%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.verse-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+  transition: opacity 0.3s ease;
+}
+
+.verse-card:hover .verse-img {
+  opacity: 0.6;
+}
+
+.verse-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #10141d 8%, transparent 75%),
+              linear-gradient(0deg, #10141d 2%, transparent 35%);
+}
+
+.verse-eyebrow {
+  color: var(--text-secondary);
+  font-size: 11px;
+  position: relative;
+  z-index: 1;
+}
+
+.verse-text {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--text-main);
+  margin: 0;
+  max-width: 56%;
+  position: relative;
+  z-index: 1;
+}
+
+.verse-ref {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.verse-link {
+  margin-top: auto;
+  align-self: flex-start;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  border: 1px solid var(--border-hair);
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.verse-link:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}

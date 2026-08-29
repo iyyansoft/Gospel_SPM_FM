@@ -1,0 +1,55 @@
+.app-card {
+  padding: 20px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  min-height: 210px;
+}
+
+.phone-mock {
+  flex-shrink: 0;
+  width: 64px;
+  height: 130px;
+  border-radius: 14px;
+  border: 1px solid var(--border-hair);
+  background: linear-gradient(160deg, #12161f, #05070b);
+  padding: 6px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 9px;
+  background: radial-gradient(circle at 50% 30%, rgba(245, 185, 66, 0.16), #05070b 75%);
+  overflow: hidden;
+}
+
+.phone-screen-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.app-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.app-eyebrow {
+  font-size: 11px;
+}
+
+.app-text {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.app-btn {
+  align-self: flex-start;
+  font-size: 10px;
+}

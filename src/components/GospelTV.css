@@ -1,0 +1,62 @@
+.tv-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 210px;
+}
+
+.tv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 16px 18px 8px;
+}
+
+.tv-tile {
+  border: 1px solid var(--border-hair);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  padding: 14px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+}
+
+.tv-tile svg {
+  font-size: 18px;
+  color: var(--tv-color);
+}
+
+.tv-tile:hover,
+.tv-tile.is-active {
+  border-color: var(--tv-color);
+  color: var(--text-main);
+  box-shadow: 0 0 16px -6px var(--tv-color);
+  transform: translateY(-2px);
+}
+
+.tv-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 0 16px;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  transition: all 0.2s ease;
+}
+
+.dot.is-active {
+  background: var(--accent-gold);
+  width: 14px;
+  border-radius: 3px;
+}

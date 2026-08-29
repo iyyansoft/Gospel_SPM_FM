@@ -1,0 +1,168 @@
+.bg-effects-sunrise {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+  background: #110724; /* Base deep violet */
+}
+
+/* Sunrise Sky Base */
+.sunrise-sky-base {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #110724 0%, #290835 40%, #5d0c3e 70%, #9e1f37 100%);
+}
+
+.sunrise-horizon-glow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: radial-gradient(circle at 15% 100%, #f6b93b 0%, #d35400 45%, transparent 80%);
+  filter: blur(10px);
+  opacity: 0.85;
+}
+
+/* Rotating Sunbeams */
+.sunbeams-container {
+  position: absolute;
+  top: -10%;
+  left: -15%;
+  width: 130vw;
+  height: 130vw;
+  opacity: 0.15;
+  transform-origin: center;
+  animation: rotate-sunbeams 180s linear infinite;
+  mix-blend-mode: overlay;
+}
+
+.sunbeams-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.sunbeam-ray {
+  fill: rgba(255, 200, 87, 0.45);
+  opacity: 0.18;
+}
+
+@keyframes rotate-sunbeams {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Clouds drifting */
+.sunrise-cloud {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+  filter: blur(30px);
+}
+
+.cloud-alpha {
+  bottom: 5%;
+  left: -20%;
+  width: 700px;
+  height: 250px;
+  animation: drift-clouds-horizontal 55s linear infinite;
+}
+
+.cloud-beta {
+  bottom: 0%;
+  right: -25%;
+  width: 800px;
+  height: 300px;
+  animation: drift-clouds-horizontal-reverse 65s linear infinite;
+}
+
+@keyframes drift-clouds-horizontal {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(130vw); }
+}
+
+@keyframes drift-clouds-horizontal-reverse {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-130vw); }
+}
+
+/* Golden Christianity Cross */
+.sunrise-cross-container {
+  position: absolute;
+  bottom: 12%;
+  left: 2%;
+  width: 220px;
+  height: 320px;
+  opacity: 0.88;
+  z-index: -1;
+  pointer-events: none;
+  filter: drop-shadow(0 0 15px rgba(246, 185, 59, 0.45));
+}
+
+.sunrise-cross-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Flying Dove */
+.sunrise-dove-container {
+  position: absolute;
+  top: 25%;
+  left: -8%;
+  animation: fly-across-sunrise 48s linear infinite;
+  pointer-events: none;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.4));
+}
+
+.sunrise-dove-svg {
+  animation: flap-sunrise 1.3s ease-in-out infinite alternate;
+}
+
+@keyframes fly-across-sunrise {
+  0% {
+    left: -8%;
+    top: 32%;
+    transform: rotate(4deg) scale(0.75);
+  }
+  50% {
+    left: 45%;
+    top: 22%;
+    transform: rotate(0deg) scale(0.95);
+  }
+  100% {
+    left: 108%;
+    top: 30%;
+    transform: rotate(6deg) scale(0.75);
+  }
+}
+
+@keyframes flap-sunrise {
+  0% { transform: scaleY(0.65); }
+  100% { transform: scaleY(1.05); }
+}
+
+/* Golden Rising Particles */
+.gold-particle {
+  position: absolute;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.5) 0%, rgba(246, 185, 59, 0.1) 70%);
+  border-radius: 50%;
+  animation: float-rise-sunrise linear infinite;
+}
+
+@keyframes float-rise-sunrise {
+  0% {
+    transform: translateY(0) scale(0.7);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.65;
+  }
+  90% {
+    opacity: 0.65;
+  }
+  100% {
+    transform: translateY(-120px) scale(1.1);
+    opacity: 0;
+  }
+}
