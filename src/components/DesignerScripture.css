@@ -69,7 +69,7 @@
 }
 
 .verse-text-body.en-text {
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .verse-text-body.ta-text {

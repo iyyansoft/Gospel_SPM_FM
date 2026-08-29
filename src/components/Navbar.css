@@ -183,5 +183,13 @@
 }
 
 @media (max-width: 560px) {
-  .brand-text { display: none; }
+  .brand-text {
+    display: flex;
+  }
+  .brand-name {
+    font-size: 14px;
+  }
+  .brand-tagline {
+    font-size: 8px;
+  }
 }
