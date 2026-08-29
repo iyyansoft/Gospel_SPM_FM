@@ -7,7 +7,7 @@ export default function AppPage() {
       <span className="eyebrow" style={{ marginBottom: 14 }}>
         App
       </span>
-      <h1>Gospel Radio, in your pocket.</h1>
+      <h1>SPM GOSPEL FM, in your pocket.</h1>
       <div style={{ maxWidth: 480, paddingBottom: 40 }}>
         <AppDownload />
       </div>

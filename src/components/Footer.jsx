@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="shell-inner footer-inner">
         <div className="footer-left">
-          <span className="footer-cross">†</span> © 2024 Gospel Radio. All Rights Reserved.
+          <span className="footer-cross">†</span> Copyright © 2026 All rights reserved
         </div>
         <div className="footer-right">
           <a href="#" className="footer-link" onClick={(e) => e.preventDefault()}>Privacy Policy</a>

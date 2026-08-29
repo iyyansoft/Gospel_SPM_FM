@@ -214,3 +214,21 @@
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
+@media (max-width: 768px) {
+  .about-page-wrapper.page-hero {
+    padding-top: 50px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  .about-tamil-main-card {
+    padding: 22px 18px;
+  }
+  .about-tamil-paragraph {
+    font-size: 13.5px;
+    line-height: 1.75;
+    text-align: left;
+  }
+}
+

@@ -9,7 +9,7 @@ const NAV_LINKS = [
   { to: '/about', label: 'About Us' },
   { to: '/channels', label: 'Channels' },
   { to: '/tv', label: 'TV' },
-  { to: '/app', label: 'MobileApp' },
+  { to: '/app', label: 'Mobile App' },
   { to: '/contact', label: 'Contact' },
 ]
 
@@ -39,7 +39,7 @@ export default function Navbar() {
             </svg>
           </span>
           <span className="brand-text">
-            <span className="brand-name">GOSPEL RADIO</span>
+            <span className="brand-name">SPM GOSPEL FM</span>
             <span className="brand-tagline">Bringing Light into Your Night</span>
           </span>
         </NavLink>
