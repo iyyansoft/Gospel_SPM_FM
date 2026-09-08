@@ -1,6 +1,7 @@
 import React from 'react'
 import { FiPlay, FiPause } from 'react-icons/fi'
 import { usePlayer } from '../context/PlayerContext.jsx'
+import logoPrayer from '../assets/logo_prayer.png'
 import './CompactChannelPlayer.css'
 
 export default function CompactChannelPlayer() {
@@ -13,13 +14,9 @@ export default function CompactChannelPlayer() {
       <div className="glass-glare" aria-hidden="true" />
       
       <div className="compact-player-top-row">
-        {/* Left: Gold Antenna Icon */}
+        {/* Left: Station Logo */}
         <div className="compact-antenna-box">
-          <svg viewBox="0 0 24 24" className="antenna-svg-icon" fill="none" stroke="currentColor" strokeWidth="1.8">
-            <circle cx="12" cy="11" r="1.5" fill="currentColor" />
-            <path d="M12 12.5v7m-2.5 1.5h5" strokeLinecap="round" />
-            <path d="M9.5 8.5a3.5 3.5 0 0 1 5 0m-7.5-2.5a7 7 0 0 1 10 0m-12.5-2.5a10.5 10.5 0 0 1 15 0" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          <img src={logoPrayer} alt="Prayer FM" className="compact-logo-img" />
         </div>
 
         {/* Center: Metadata */}

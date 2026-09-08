@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import FlyingDove from './FlyingDove.jsx'
 import './BackgroundEffects.css'
 
 export default function BackgroundEffects() {
@@ -84,14 +85,9 @@ export default function BackgroundEffects() {
         </svg>
       </div>
 
-      {/* Floating White Dove Silhouette */}
-      <div className="sunrise-dove-container">
-        <svg viewBox="0 0 100 100" className="sunrise-dove-svg" width="36" height="36">
-          <path d="M 50 45 C 35 30, 15 35, 10 50 C 25 50, 42 48, 50 45 Z" fill="#ffffff" opacity="0.6" />
-          <path d="M 50 45 C 65 30, 85 35, 90 50 C 75 50, 58 48, 50 45 Z" fill="#ffffff" opacity="0.6" />
-          <path d="M 50 45 L 50 68 C 47 70, 42 75, 48 78 C 50 78, 53 72, 50 68 Z" fill="#ffffff" opacity="0.6" />
-        </svg>
-      </div>
+      {/* Animated Holy Spirit Flying Doves */}
+      <FlyingDove top="22%" delay={0} scale={1.05} duration="38s" />
+      <FlyingDove top="42%" delay={18} scale={0.7} duration="48s" />
 
       {/* Golden Rising Particles */}
       <div className="sunrise-particles-layer">

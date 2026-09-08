@@ -1,12 +1,13 @@
 import React from 'react'
+import TiltCard from './TiltCard.jsx'
 import './DesignerScripture.css'
 
 export default function DesignerScripture() {
   return (
-    <div className="designer-scripture-card">
+    <TiltCard className="designer-scripture-card">
       <div className="verse-section">
         <div className="verse-left-meta">
-          <svg viewBox="0 0 24 24" className="bible-icon-svg" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <svg viewBox="0 0 24 24" className="bible-icon-svg" fill="none" stroke="currentColor" strokeWidth="2.8">
             <path d="M12 21c-1.2-1-3-1.5-5-1.5s-3.8.5-5 1.5V5c1.2-1 3-1.5 5-1.5s3.8.5 5 1.5m0 16c1.2-1 3-1.5 5-1.5s3.8.5 5 1.5V5c-1.2-1-3-1.5-5-1.5s-3.8.5-5 1.5m0 0v16" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>
@@ -27,7 +28,7 @@ export default function DesignerScripture() {
 
       <div className="verse-section">
         <div className="verse-left-meta">
-          <svg viewBox="0 0 24 24" className="bible-icon-svg" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <svg viewBox="0 0 24 24" className="bible-icon-svg" fill="none" stroke="currentColor" strokeWidth="2.8">
             <path d="M12 21c-1.2-1-3-1.5-5-1.5s-3.8.5-5 1.5V5c1.2-1 3-1.5 5-1.5s3.8.5 5 1.5m0 16c1.2-1 3-1.5 5-1.5s3.8.5 5 1.5V5c-1.2-1-3-1.5-5-1.5s-3.8.5-5 1.5m0 0v16" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>
@@ -39,6 +40,6 @@ export default function DesignerScripture() {
           </p>
         </div>
       </div>
-    </div>
+    </TiltCard>
   )
 }

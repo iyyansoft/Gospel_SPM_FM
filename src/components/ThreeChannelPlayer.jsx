@@ -1,171 +1,219 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import React, { useEffect, useState } from 'react'
+import { motion, LayoutGroup } from 'framer-motion'
 import { FiPlay, FiPause } from 'react-icons/fi'
 import { usePlayer } from '../context/PlayerContext.jsx'
 import './ThreeChannelPlayer.css'
 
+import TiltCard from './TiltCard.jsx'
+
+import logoPrayer from '../assets/logo_prayer.png'
+import logoMusic from '../assets/logo_music.png'
+import logoPraise from '../assets/logo_praise.png'
+
 const CHANNEL_LOGOS = {
-  'prayer-fm': '/logo_prayer.png',
-  'music-fm': '/logo_music.png',
-  'praise-fm': '/logo_praise.png',
+  'prayer-fm': logoPrayer,
+  'music-fm': logoMusic,
+  'praise-fm': logoPraise,
 }
 
 const CHANNEL_THEMES = {
   'prayer-fm': { 
     color: '#f5b942', 
-    glow: 'rgba(245, 185, 66, 0.2)', 
+    glow: 'rgba(245, 185, 66, 0.25)', 
     freq: '90.5 FM', 
     tagline: 'Bringing Light into Your Night',
-    isAntenna: true 
+    logoBg: 'transparent',
   },
   'music-fm': { 
     color: '#a855f7', 
-    glow: 'rgba(168, 85, 247, 0.2)', 
+    glow: 'rgba(168, 85, 247, 0.25)', 
     freq: '92.7 FM', 
     tagline: 'Uplifting grace and gospel hymns.',
-    isAntenna: false 
+    logoBg: 'transparent',
   },
   'praise-fm': { 
     color: '#3b82f6', 
-    glow: 'rgba(59, 130, 246, 0.2)', 
+    glow: 'rgba(59, 130, 246, 0.25)', 
     freq: '93.5 FM', 
     tagline: 'Exalting hope and faith together.',
-    isAntenna: false 
+    logoBg: 'transparent',
   },
+}
+
+const ALL_STATION_IDS = ['prayer-fm', 'music-fm', 'praise-fm']
+
+function swapSlots(prevSlots, targetId) {
+  if (!prevSlots || prevSlots.length !== 3 || new Set(prevSlots).size !== 3) {
+    prevSlots = [...ALL_STATION_IDS]
+  }
+  const targetIdx = prevSlots.indexOf(targetId)
+  if (targetIdx <= 0) return prevSlots
+
+  const prevMain = prevSlots[0]
+  const next = [...prevSlots]
+  next[0] = targetId
+  next[targetIdx] = prevMain
+  return next
 }
 
 export default function ThreeChannelPlayer() {
   const { 
     channels, 
-    activeChannel, 
+    currentChannel, 
     isPlaying, 
     togglePlay, 
     selectChannel 
   } = usePlayer()
 
-  const handleChannelClick = (channelId) => {
+  // Explicit slot order: [MainLeftId, TopRightId, BottomRightId]
+  const [slotOrder, setSlotOrder] = useState(['prayer-fm', 'music-fm', 'praise-fm'])
+
+  // Sync slotOrder if currentChannel changes externally (e.g. from navbar or live page)
+  useEffect(() => {
+    if (currentChannel && slotOrder[0] !== currentChannel) {
+      setSlotOrder((prev) => swapSlots(prev, currentChannel))
+    }
+  }, [currentChannel])
+
+  const handleCardClick = (channelId, isMain) => {
+    if (isMain) {
+      togglePlay()
+      return
+    }
+
+    setSlotOrder((prev) => swapSlots(prev, channelId))
     selectChannel(channelId)
   }
 
-  const activeTheme = CHANNEL_THEMES[activeChannel.id] || CHANNEL_THEMES['prayer-fm']
-  const activeLogo = CHANNEL_LOGOS[activeChannel.id] || '/logo_prayer.png'
-  const inactiveChannels = channels.filter(c => c.id !== activeChannel.id)
+  // Ensure activeChannelId and rightSlotChannelIds are strictly unique
+  const activeChannelId = slotOrder[0]
+  const rightSlotChannelIds = slotOrder.slice(1)
 
-  const eqBarsActive = Array.from({ length: 32 }, (_, i) => i + 1)
-  const eqBarsInactive = Array.from({ length: 24 }, (_, i) => i + 1)
+  const eqBarsActive = Array.from({ length: 28 }, (_, i) => i + 1)
+  const eqBarsInactive = Array.from({ length: 14 }, (_, i) => i + 1)
 
   return (
-    <div className="split-deck-section">
-      <div className="split-layout-container">
-        
-        {/* LEFT: Active Player Card */}
-        <div 
-          className="split-active-card"
-          style={{
-            borderColor: activeTheme.color,
-            boxShadow: `0 16px 45px rgba(0, 0, 0, 0.75), 0 0 30px ${activeTheme.glow}`
-          }}
-        >
-          <div className="glass-glare" aria-hidden="true" />
+    <LayoutGroup>
+      <div className="split-deck-section">
+        <div className="split-layout-container">
           
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeChannel.id}
-              initial={{ opacity: 0, x: -12 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 12 }}
-              transition={{ duration: 0.25 }}
-              className="active-inner-motion"
-            >
-              <div className="active-top-content">
-                {/* Left inside card: Circular Logo */}
-                <div className="active-visual-column">
-                  <div className="active-logo-circle">
-                    <img src={activeLogo} alt={activeChannel.name} className="active-avatar-img" />
+          {/* LEFT SLOT: Main Active Station */}
+          {(() => {
+            const chan = channels.find((c) => c.id === activeChannelId) || channels[0]
+            const logo = chan.logo || CHANNEL_LOGOS[chan.id] || logoPrayer
+            const theme = CHANNEL_THEMES[chan.id] || CHANNEL_THEMES['prayer-fm']
+
+            return (
+              <motion.div
+                key={chan.id}
+                layoutId={`station-card-${chan.id}`}
+                transition={{ type: 'spring', stiffness: 220, damping: 26, mass: 0.85 }}
+                style={{ flex: 1.5 }}
+              >
+                <TiltCard 
+                  className="split-active-card"
+                  style={{
+                    borderColor: theme.color,
+                    boxShadow: `0 16px 45px rgba(0, 0, 0, 0.75), 0 0 32px ${theme.glow}`
+                  }}
+                >
+                  <div className="glass-glare" aria-hidden="true" />
+                  
+                  <div className="active-inner-motion">
+                    <div className="active-top-content">
+                      {/* Left inside card: Circular Logo */}
+                      <div className="active-visual-column">
+                        <div className="active-logo-circle" style={{ background: theme.logoBg || '#080a14', borderColor: theme.color }}>
+                          <img src={logo} alt={chan.name} className="active-avatar-img" />
+                        </div>
+                      </div>
+
+                      {/* Center inside card: Details */}
+                      <div className="active-details-column">
+                        <div className="active-title-row">
+                          <h3 className="active-station-title">
+                            {chan.name}
+                          </h3>
+                          <div className="live-pill-badge">LIVE</div>
+                        </div>
+                        <div className="active-freq-digits" style={{ color: theme.color }}>
+                          {theme.freq.split(' ')[0]}
+                          <span className="active-freq-unit"> FM</span>
+                        </div>
+                        <p className="active-desc-text">
+                          {chan.description}
+                        </p>
+                      </div>
+
+                      {/* Right inside card: Play/Pause Button */}
+                      <div className="active-play-column">
+                        <button 
+                          onClick={togglePlay} 
+                          className="active-circle-toggle"
+                          style={{ borderColor: theme.color, color: theme.color }}
+                          aria-label={isPlaying ? 'Pause' : 'Play'}
+                        >
+                          {isPlaying ? <FiPause /> : <FiPlay className="active-play-offset" />}
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Bottom Equalizer visualizer */}
+                    <div className="active-wave-container">
+                      {eqBarsActive.map((bar) => (
+                        <div 
+                          key={bar} 
+                          className={`active-eq-bar bar-${bar} ${isPlaying ? 'pulsing' : ''}`}
+                          style={{
+                            animationDelay: `${(bar % 6) * 0.1}s`,
+                            height: isPlaying ? undefined : `${2 + (bar % 4) * 4}px`,
+                            backgroundColor: theme.color,
+                            boxShadow: isPlaying ? `0 0 6px ${theme.color}` : 'none'
+                          }}
+                        />
+                      ))}
+                    </div>
                   </div>
-                </div>
+                </TiltCard>
+              </motion.div>
+            )
+          })()}
 
-                {/* Center inside card: Details */}
-                <div className="active-details-column">
-                  <div className="active-title-row">
-                    <h3 className="active-station-title">{activeChannel.name}</h3>
-                    <div className="live-pill-badge">LIVE</div>
-                  </div>
-                  <div className="active-freq-digits" style={{ color: activeTheme.color }}>
-                    {activeTheme.freq.split(' ')[0]}
-                    <span className="active-freq-unit"> FM</span>
-                  </div>
-                  <p className="active-desc-text">
-                    {activeChannel.description}
-                  </p>
-                </div>
-
-                {/* Right inside card: Play/Pause Button */}
-                <div className="active-play-column">
-                  <button 
-                    onClick={togglePlay} 
-                    className="active-circle-toggle"
-                    style={{ borderColor: activeTheme.color, color: activeTheme.color }}
-                    aria-label={isPlaying ? 'Pause' : 'Play'}
-                  >
-                    {isPlaying ? <FiPause /> : <FiPlay className="active-play-offset" />}
-                  </button>
-                </div>
-              </div>
-
-              {/* Bottom Equalizer visualizer */}
-              <div className="active-wave-container">
-                {eqBarsActive.map((bar) => (
-                  <div 
-                    key={bar} 
-                    className={`active-eq-bar bar-${bar} ${isPlaying ? 'pulsing' : ''}`}
-                    style={{
-                      animationDelay: `${(bar % 6) * 0.1}s`,
-                      height: isPlaying ? undefined : `${2 + (bar % 4) * 4}px`,
-                      backgroundColor: activeTheme.color,
-                      boxShadow: isPlaying ? `0 0 6px ${activeTheme.color}` : 'none'
-                    }}
-                  />
-                ))}
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-
-        {/* RIGHT: Stacked Inactive Cards */}
-        <div className="split-inactive-column">
-          <AnimatePresence mode="popLayout">
-            {inactiveChannels.map((chan) => {
-              const logo = CHANNEL_LOGOS[chan.id] || '/logo_prayer.png'
+          {/* RIGHT SLOTS: Stacked Inactive Stations */}
+          <div className="split-inactive-column">
+            {rightSlotChannelIds.map((chanId) => {
+              const chan = channels.find((c) => c.id === chanId) || channels[1]
+              const logo = chan.logo || CHANNEL_LOGOS[chan.id] || logoPrayer
               const theme = CHANNEL_THEMES[chan.id] || CHANNEL_THEMES['prayer-fm']
 
               return (
                 <motion.div 
                   key={chan.id}
-                  layout
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
+                  layoutId={`station-card-${chan.id}`}
+                  transition={{ type: 'spring', stiffness: 220, damping: 26, mass: 0.85 }}
                   className="inactive-deck-item"
                   style={{
                     borderColor: theme.color,
                     boxShadow: `0 6px 20px rgba(0, 0, 0, 0.35)`
                   }}
-                  onClick={() => handleChannelClick(chan.id)}
+                  onClick={() => handleCardClick(chan.id, false)}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 25 }}
                 >
                   <div className="glass-glare" aria-hidden="true" />
                   
                   <div className="inactive-main-row">
                     {/* Left: circular logo */}
-                    <img src={logo} alt={chan.name} className="inactive-logo-avatar" />
+                    <div className="inactive-logo-avatar-wrapper" style={{ background: theme.logoBg || '#080a14' }}>
+                      <img src={logo} alt={chan.name} className="inactive-logo-avatar" />
+                    </div>
 
                     {/* Middle: Details */}
                     <div className="inactive-meta-block">
                       <div className="inactive-title-row">
-                        <span className="inactive-name">{chan.name}</span>
+                        <span className="inactive-name">
+                          {chan.name}
+                        </span>
                         <div className="live-pill-badge">LIVE</div>
                       </div>
                       <div className="inactive-freq-digits" style={{ color: theme.color }}>
@@ -202,10 +250,10 @@ export default function ThreeChannelPlayer() {
                 </motion.div>
               )
             })}
-          </AnimatePresence>
-        </div>
+          </div>
 
+        </div>
       </div>
-    </div>
+    </LayoutGroup>
   )
 }

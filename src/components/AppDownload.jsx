@@ -1,11 +1,11 @@
 import React from 'react'
-import { FiSmartphone } from 'react-icons/fi'
 import { SiAndroid } from 'react-icons/si'
+import TiltCard from './TiltCard.jsx'
 import './AppDownload.css'
 
 export default function AppDownload() {
   return (
-    <div className="panel app-card">
+    <TiltCard className="panel app-card">
       <div className="phone-mock">
         <div className="phone-screen">
           <img src="/phone_app_screen.jpg" alt="App UI Mockup" className="phone-screen-img" />
@@ -22,9 +22,9 @@ export default function AppDownload() {
           className="btn btn-outline btn-small app-btn"
           onClick={(e) => e.preventDefault()}
         >
-          <SiAndroid /> Android Download App
+          <SiAndroid /> Android App
         </a>
       </div>
-    </div>
+    </TiltCard>
   )
 }

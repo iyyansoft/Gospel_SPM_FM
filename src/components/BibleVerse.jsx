@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FaCross } from 'react-icons/fa'
 import { verseOfTheDay } from '../data/channels.js'
+import TiltCard from './TiltCard.jsx'
 import './BibleVerse.css'
 
 export default function BibleVerse() {
   return (
-    <div className="panel verse-card">
+    <TiltCard className="panel verse-card">
       <div className="verse-image-container" aria-hidden="true">
         <img src="/bible_lantern.jpg" alt="Open Bible and Lantern" className="verse-img" />
         <div className="verse-img-overlay" />
@@ -17,6 +17,6 @@ export default function BibleVerse() {
       <Link to="/bible-verse" className="verse-link">
         Read More
       </Link>
-    </div>
+    </TiltCard>
   )
 }

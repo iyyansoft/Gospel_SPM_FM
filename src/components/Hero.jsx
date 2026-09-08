@@ -7,10 +7,11 @@ import './Hero.css'
 export default function Hero() {
   return (
     <section className="hero">
-      <div className="shell-inner hero-grid">
+      <div className="shell-inner hero-container">
+        {/* Top Section Header Banner */}
         <motion.div
-          className="hero-copy"
-          initial={{ opacity: 0, y: 24 }}
+          className="hero-top-banner"
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
@@ -23,18 +24,28 @@ export default function Hero() {
             24/7 Christian Radio Station spreading the Gospel, uplifting souls
             and sharing the love of Christ.
           </p>
-
-          <ThreeChannelPlayer />
         </motion.div>
 
-        <motion.div
-          className="hero-verse-col"
-          initial={{ opacity: 0, x: 24 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
-        >
-          <DesignerScripture />
-        </motion.div>
+        {/* Content Row below Top Banner */}
+        <div className="hero-grid">
+          <motion.div
+            className="hero-copy"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
+          >
+            <ThreeChannelPlayer />
+          </motion.div>
+
+          <motion.div
+            className="hero-verse-col"
+            initial={{ opacity: 0, x: 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.25 }}
+          >
+            <DesignerScripture />
+          </motion.div>
+        </div>
       </div>
     </section>
   )

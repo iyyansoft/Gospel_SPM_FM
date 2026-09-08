@@ -1,12 +1,24 @@
 .hero {
   position: relative;
-  padding: 60px 0 16px; /* Reduced padding to fit components within viewport */
-  height: 100vh; /* Locked to viewport height */
-  min-height: 580px; /* Reduced minimum height to ensure it fits laptops */
-  overflow: hidden;
-  display: flex;
-  align-items: center;
+  padding: 40px 0 60px;
+  min-height: 100vh;
   box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+}
+
+.hero-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-top-banner {
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 60px; /* Ample bottom margin spacing between top banner and content below */
+  position: relative;
+  z-index: 2;
 }
 
 .hero-bg-visual {
@@ -27,38 +39,65 @@
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 580px 1fr; /* Reduced from 660px to make the player width narrower */
-  gap: 40px;
-  align-items: center; /* Center elements vertically in viewport */
-  height: 100%;
+  grid-template-columns: minmax(0, 710px) minmax(0, 490px);
+  gap: 28px;
+  align-items: start;
   width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .hero-copy {
-  padding-left: 20px;
+  padding-left: 0;
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  min-width: 0;
+  width: 100%;
+}
+
+/* Bible Verse Right Column Styling */
+.hero-verse-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+}
+
+@media (max-width: 980px) {
+  .hero-verse-col {
+    padding-top: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    align-items: center;
+  }
 }
 
 .hero-heading {
   font-family: var(--font-display);
-  font-size: clamp(36px, 4.2vw, 48px); /* Slightly reduced to keep it compact and clear of the background cross */
+  font-size: clamp(38px, 4.5vw, 54px);
   line-height: 1.15;
   letter-spacing: 0.005em;
-  margin: 0 0 12px; /* Reduced from 20px to save height */
+  margin: 0 0 10px;
   font-weight: 900;
-  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.9)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.9));
 }
 
 .line-white,
 .line-gold {
-  display: block;
+  display: inline;
 }
 
 .line-white {
   color: #ffffff;
+  margin-right: 12px;
 }
 
 .line-gold {
@@ -197,139 +236,4 @@
   }
 }
 
-/* Bible Verse Right Column Styling */
-.hero-verse-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* Align the card to the bottom to maximize the gap below the dove */
-  align-items: flex-end;
-  height: 100%;
-  padding-top: 0; /* Reset top padding to prevent clipping */
-  padding-bottom: 56px; /* Reduced from 76px to fit within the viewport */
-  padding-left: 20px;
-  padding-right: 24px;
-  box-sizing: border-box;
-}
 
-.hero-verse-container {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  background: rgba(10, 12, 19, 0.78);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 24px 28px;
-  border-radius: 16px;
-  border: 1px solid rgba(245, 185, 66, 0.28);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 
-              0 0 25px rgba(245, 185, 66, 0.12),
-              inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  max-width: 660px;
-  margin-top: 64px; /* Increased margin-top to push the card down and clear the dove */
-  transition: all 0.3s ease;
-}
-
-.hero-verse-container:hover {
-  border-color: rgba(245, 185, 66, 0.45);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7), 
-              0 0 30px rgba(245, 185, 66, 0.18);
-  transform: translateY(-2px);
-}
-
-.verse-section {
-  display: flex;
-  align-items: stretch;
-  gap: 16px;
-}
-
-.verse-left-meta {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.bible-icon-svg {
-  width: 22px;
-  height: 22px;
-  color: var(--accent-gold);
-  filter: drop-shadow(0 0 4px rgba(245, 185, 66, 0.4));
-  flex-shrink: 0;
-}
-
-.verse-vertical-bar {
-  width: 1px;
-  background: rgba(245, 185, 66, 0.25);
-  align-self: stretch;
-  margin: 4px 0;
-}
-
-.verse-content-right {
-  flex: 1;
-  display: flex;
-  align-items: center;
-}
-
-.verse-text-body {
-  margin: 0;
-  font-family: 'Outfit', 'Inter', sans-serif;
-  font-size: 13.5px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
-  text-align: left;
-}
-
-.verse-text-body.en-text {
-  white-space: normal;
-}
-
-.verse-text-body.ta-text {
-  white-space: normal;
-}
-
-.verse-citation {
-  color: var(--accent-gold);
-  font-weight: 700;
-  margin-left: 10px;
-  font-size: 11.5px;
-  white-space: nowrap;
-  letter-spacing: 0.03em;
-  text-shadow: 0 0 8px rgba(245, 185, 66, 0.2);
-}
-
-.verse-separator-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin: 4px 0;
-}
-
-.separator-line {
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(245, 185, 66, 0.2) 50%, transparent);
-}
-
-.separator-diamond {
-  font-size: 10px;
-  color: var(--accent-gold);
-  opacity: 0.8;
-  filter: drop-shadow(0 0 3px rgba(245, 185, 66, 0.5));
-}
-
-@media (max-width: 980px) {
-  .hero-verse-col {
-    padding-top: 40px;
-    padding-left: 0;
-    padding-right: 0;
-    align-items: center;
-  }
-  .hero-verse-container {
-    max-width: 100%;
-  }
-  .verse-text-body {
-    white-space: normal;
-    text-align: center;
-  }
-}

@@ -25,7 +25,7 @@
   --shadow-card-hover: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 16px 50px rgba(0, 0, 0, 0.45),
     0 0 0 1px rgba(246, 185, 59, 0.25);
 
-  --nav-height: 76px;
+  --nav-height: 88px;
 }
 
 * {
@@ -291,7 +291,7 @@ section {
 /* ---------- generic page (inner routed pages) ---------- */
 
 .page-hero {
-  padding: 340px 0 180px;
+  padding: 40px 0 60px;
 }
 
 .page-hero h1 {
@@ -301,10 +301,21 @@ section {
   margin: 0 0 10px;
 }
 
-.page-hero p {
-  color: var(--text-secondary);
-  max-width: 620px;
+.page-hero > p {
+  color: #ffffff;
+  font-size: 15.5px;
+  font-weight: 600;
+  max-width: 640px;
   line-height: 1.6;
+  margin-bottom: 48px;
+  background: rgba(10, 12, 22, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 12px 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(245, 185, 66, 0.25);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  display: inline-block;
 }
 
 /* ---------- Custom Live Hero Banner Styles ---------- */

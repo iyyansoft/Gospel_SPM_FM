@@ -1,27 +1,55 @@
 .app-card {
-  padding: 20px;
+  padding: 22px 24px;
   display: flex;
-  gap: 14px;
+  gap: 16px;
   align-items: center;
-  min-height: 210px;
+  justify-content: center;
+  height: 100%;
+  min-height: 270px;
+  background: rgba(14, 16, 26, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 185, 66, 0.25);
+  border-radius: 20px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.65), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .phone-mock {
   flex-shrink: 0;
-  width: 64px;
-  height: 130px;
+  width: 72px;
+  height: 138px;
   border-radius: 14px;
-  border: 1px solid var(--border-hair);
-  background: linear-gradient(160deg, #12161f, #05070b);
-  padding: 6px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 8px 24px rgba(0, 0, 0, 0.4);
+  border: 2px solid #282c3c;
+  background: #090b10;
+  padding: 4px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  position: relative;
+  transform: translateZ(26px);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Phone top speaker Notch */
+.phone-mock::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 2px;
+  background: #3a3f52;
+  border-radius: 2px;
+  z-index: 3;
 }
 
 .phone-screen {
   width: 100%;
   height: 100%;
-  border-radius: 9px;
-  background: radial-gradient(circle at 50% 30%, rgba(245, 185, 66, 0.16), #05070b 75%);
+  border-radius: 10px;
+  background: #000000;
   overflow: hidden;
 }
 
@@ -34,22 +62,71 @@
 .app-copy {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   gap: 8px;
+  flex: 1;
   min-width: 0;
+  height: 100%;
 }
 
 .app-eyebrow {
-  font-size: 11px;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.25;
 }
 
 .app-text {
   margin: 0;
-  font-size: 12px;
-  line-height: 1.5;
-  color: var(--text-secondary);
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .app-btn {
   align-self: flex-start;
-  font-size: 10px;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-gold) !important;
+  color: #ffffff !important;
+  background: rgba(245, 185, 66, 0.08) !important;
+  margin-top: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  max-width: 100%;
+  box-shadow: 0 0 10px rgba(245, 185, 66, 0.15);
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.app-btn:hover {
+  background: var(--accent-gold) !important;
+  color: #0b0e14 !important;
+  box-shadow: 0 0 20px rgba(245, 185, 66, 0.4);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .app-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 18px;
+    gap: 14px;
+  }
+  .app-copy {
+    align-items: center;
+  }
+  .app-btn {
+    align-self: center;
+  }
 }

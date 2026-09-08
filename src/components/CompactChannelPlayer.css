@@ -80,23 +80,23 @@
 
 /* Left: Radio Antenna Box */
 .compact-antenna-box {
-  width: 46px;
-  height: 46px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
-  background: rgba(245, 185, 66, 0.05);
-  border: 1px solid rgba(245, 185, 66, 0.22);
+  background: #000000;
+  border: 1.8px solid var(--accent-gold);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: inset 0 0 8px rgba(245, 185, 66, 0.05);
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(245, 185, 66, 0.25);
 }
 
-.antenna-svg-icon {
-  width: 23px;
-  height: 23px;
-  color: var(--accent-gold);
-  filter: drop-shadow(0 0 3px rgba(245, 185, 66, 0.45));
+.compact-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Center: Station Details */

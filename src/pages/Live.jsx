@@ -54,10 +54,9 @@ export default function Live() {
       </section>
 
       <section className="shell-inner" style={{ paddingBottom: 60 }}>
-        <div className="dash-grid-4">
+        <div className="dash-grid-3">
           <BibleVerse />
           <AppDownload />
-          <GospelTV />
           <SocialConnect />
         </div>
       </section>
