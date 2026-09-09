@@ -109,14 +109,15 @@ export default function AppPage() {
               <p className="app-card-sub">Available now for Android devices. Fast APK download.</p>
 
               <a
-                href="#"
+                href="https://play.google.com/store/apps/details?id=com.spmgospel.fm"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-primary app-main-btn"
-                onClick={(e) => e.preventDefault()}
               >
                 <SiAndroid className="btn-icon-lg" />
                 <span className="app-btn-text">
                   <strong>Download Android App</strong>
-                  <small>Direct APK • v2.4 (14 MB)</small>
+                  <small>Google Play Store</small>
                 </span>
               </a>
 

@@ -99,7 +99,7 @@ export const socialLinks = [
   { id: 'youtube', label: 'YouTube', url: 'https://www.youtube.com/@spmgospelfm7223' },
   { id: 'instagram', label: 'Instagram', url: 'https://instagram.com' },
   { id: 'twitter', label: 'Twitter / X', url: 'https://x.com' },
-  { id: 'whatsapp', label: 'WhatsApp', url: 'https://wa.me' },
+  { id: 'whatsapp', label: 'WhatsApp', url: 'https://wa.me/919840857022' },
 ]
 
 export const verseOfTheDay = {

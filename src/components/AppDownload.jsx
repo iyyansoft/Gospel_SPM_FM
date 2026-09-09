@@ -18,9 +18,10 @@ export default function AppDownload() {
           App now!
         </p>
         <a
-          href="#"
+          href="https://play.google.com/store/apps/details?id=com.spmgospel.fm"
+          target="_blank"
+          rel="noopener noreferrer"
           className="btn btn-outline btn-small app-btn"
-          onClick={(e) => e.preventDefault()}
         >
           <SiAndroid /> Android App
         </a>
