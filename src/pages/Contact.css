@@ -173,17 +173,17 @@
 
 /* WhatsApp QR Code Card Styling */
 .contact-qr-wrapper {
-  margin-top: 16px;
+  margin-top: 18px;
 }
 
 .contact-qr-card-link {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 12px 18px;
+  gap: 20px;
+  padding: 18px 22px;
   background: rgba(37, 211, 102, 0.07);
   border: 1px solid rgba(37, 211, 102, 0.3);
-  border-radius: 16px;
+  border-radius: 18px;
   text-decoration: none;
   transition: all 0.3s ease;
   width: fit-content;
@@ -194,38 +194,39 @@
   background: rgba(37, 211, 102, 0.16);
   border-color: #25d366;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.25);
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.28);
 }
 
 .contact-qr-img {
-  width: 96px;
+  width: 165px;
   height: auto;
-  border-radius: 10px;
-  border: 2px solid #ffffff;
+  border-radius: 12px;
+  border: 3px solid #ffffff;
   background: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
   flex-shrink: 0;
 }
 
 .contact-qr-info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .contact-qr-title {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 800;
   color: #25d366;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .contact-qr-sub {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.4;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+  max-width: 220px;
 }
 
 /* Right Section: Connect & Socials */
