@@ -1,20 +1,31 @@
 .social-card {
-  padding: 26px 24px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 18px;
   min-height: 270px;
+  height: 100%;
+  border: 1.5px solid rgba(245, 185, 66, 0.3) !important;
+  background: rgba(14, 16, 26, 0.78) !important;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.65), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  border-radius: 20px !important;
   box-sizing: border-box;
 }
+
 
 .social-icons {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: nowrap;
-  gap: 8px;
+  gap: 12px;
   width: 100%;
+  margin-top: 32px;
+  margin-bottom: 20px;
 }
+
 
 .social-icon {
   width: 48px;
@@ -46,20 +57,23 @@
   margin-top: auto;
   display: flex;
   align-items: flex-end;
-  gap: 3px;
-  height: 30px;
+  gap: 3.5px;
+  height: 56px;
+  padding-top: 10px;
 }
 
 .eq span {
   flex: 1;
-  border-radius: 2px;
-  background: linear-gradient(180deg, var(--accent-gold-bright), rgba(245, 185, 66, 0.25));
-  height: 20%;
-  animation: eq-bounce 1s ease-in-out infinite;
-  animation-delay: calc(var(--i) * 0.06s);
+  border-radius: 3px;
+  background: linear-gradient(180deg, var(--accent-gold-bright), rgba(245, 185, 66, 0.2));
+  height: 25%;
+  animation: eq-bounce 1.1s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.055s);
+  box-shadow: 0 0 6px rgba(245, 185, 66, 0.3);
 }
 
 @keyframes eq-bounce {
-  0%, 100% { height: 15%; }
-  50% { height: 90%; }
+  0%, 100% { height: 18%; }
+  50% { height: 95%; }
 }
+

@@ -14,15 +14,16 @@ export default function Home() {
 
       {/* Horizontal Section Divider Line below Bible Reading / Hero */}
       <div className="shell-inner">
-        <div className="section-divider">
+        <div className="section-divider" style={{ margin: '36px 0 24px' }}>
           <div className="divider-wing-left" />
-          <span className="divider-text">✦ Featured Channels ✦</span>
+          <span className="divider-text">✦ Our Channels ✦</span>
           <div className="divider-wing-right" />
         </div>
       </div>
 
+
       {/* 3 Live Channels Grid (CHURCH LIVE, BIBLE, GOSPELTV) */}
-      <section className="shell-inner" style={{ paddingBottom: 40 }}>
+      <section className="shell-inner" style={{ paddingBottom: 20 }}>
         <div className="dash-grid-3">
           {channelsPageList.map((channel, i) => (
             <ChannelCard channel={channel} index={i} key={channel.id} />
@@ -32,7 +33,7 @@ export default function Home() {
 
       {/* Section Divider Line before App Download & Social Connect */}
       <div className="shell-inner">
-        <div className="section-divider" style={{ margin: '20px 0 16px' }}>
+        <div className="section-divider" style={{ margin: '40px 0 24px' }}>
           <div className="divider-wing-left" />
           <span className="divider-text">✦ Connect & Download ✦</span>
           <div className="divider-wing-right" />
@@ -41,7 +42,7 @@ export default function Home() {
 
       {/* Mobile App & Social Connect Section */}
       <section className="shell-inner" style={{ paddingBottom: 60 }}>
-        <div className="dash-grid-3" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+        <div className="dash-row">
           <AppDownload />
           <SocialConnect />
         </div>
@@ -49,4 +50,5 @@ export default function Home() {
     </>
   )
 }
+
 

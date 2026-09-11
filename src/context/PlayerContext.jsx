@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useRef, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { channels } from '../data/channels.js'
 
 const PlayerContext = createContext(null)
@@ -10,6 +11,7 @@ const STREAM_URLS = {
 }
 
 export function PlayerProvider({ children }) {
+  const location = useLocation()
   const [activeChannelId, setActiveChannelId] = useState('prayer-fm')
   const [isPlaying, setIsPlaying] = useState(false) // Set default to false to comply with browser autoplay policies
   const [volume, setVolume] = useState(72)
@@ -18,6 +20,15 @@ export function PlayerProvider({ children }) {
   const audioRef = useRef(null)
 
   const activeChannel = channels.find((c) => c.id === activeChannelId) || channels[0]
+
+  // Automatically stop playback on page navigation (route change)
+  useEffect(() => {
+    setIsPlaying(false)
+    if (audioRef.current) {
+      audioRef.current.pause()
+      audioRef.current.src = ''
+    }
+  }, [location.pathname])
 
   // Initialize Audio element once
   useEffect(() => {
@@ -31,6 +42,7 @@ export function PlayerProvider({ children }) {
       }
     }
   }, [])
+
 
   // Update volume
   useEffect(() => {

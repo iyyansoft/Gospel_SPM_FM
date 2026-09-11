@@ -13,13 +13,15 @@ const ICONS = {
 }
 
 export default function ChannelCard({ channel, index = 0 }) {
-  const { activeChannel } = usePlayer()
+  const { activeChannel, selectChannel } = usePlayer()
   const Icon = ICONS[channel.icon] || FaCross
-  const isActive = activeChannel.id === channel.id
+  const isActive = activeChannel?.id === channel.id
 
   const handleCardClick = (e) => {
     e.preventDefault()
-    if (channel.link) {
+    if (channel.id === 'prayer-fm' || channel.id === 'music-fm' || channel.id === 'praise-fm') {
+      selectChannel(channel.id)
+    } else if (channel.link) {
       window.open(channel.link, '_blank', 'noopener,noreferrer')
     }
   }
