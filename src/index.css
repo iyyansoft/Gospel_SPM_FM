@@ -410,7 +410,8 @@ section {
   }
   
   .shell-inner { 
-    padding: 0 14px; 
+    padding: 0 20px;
+    box-sizing: border-box;
   }
   
   section { 
@@ -418,18 +419,22 @@ section {
   }
   
   .page-hero {
-    padding: 24px 0 32px;
+    padding: 24px 0 28px;
   }
   
   .page-hero h1 {
-    font-size: clamp(28px, 8vw, 42px);
+    font-size: clamp(26px, 7.5vw, 40px);
+    line-height: 1.15;
+    margin-top: 6px;
+    margin-bottom: 12px;
   }
   
   .page-hero > p {
     font-size: 13.5px;
     margin-bottom: 24px;
-    padding: 10px 14px;
+    padding: 12px 16px;
     width: 100%;
+    box-sizing: border-box;
   }
 
   .banner-title {
@@ -441,4 +446,5 @@ section {
     margin-bottom: 32px !important;
   }
 }
+
 

@@ -291,3 +291,44 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 560px) {
+  .app-showcase-grid {
+    gap: 20px;
+    margin-top: 12px;
+  }
+  .app-features-grid {
+    gap: 14px;
+  }
+  .app-feature-card {
+    padding: 14px 16px;
+    border-radius: 16px;
+  }
+  .app-feature-icon-box {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    font-size: 17px;
+  }
+  .app-feature-title {
+    font-size: 14px;
+  }
+  .app-feature-desc {
+    font-size: 11.5px;
+  }
+  .app-stats-row {
+    padding: 12px 10px;
+    border-radius: 14px;
+  }
+  .app-stat-val {
+    font-size: 16px;
+  }
+  .app-stat-lbl {
+    font-size: 9.5px;
+  }
+  .app-download-hero-card {
+    padding: 18px 16px;
+    border-radius: 20px;
+  }
+}
+
