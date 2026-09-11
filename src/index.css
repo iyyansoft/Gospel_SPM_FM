@@ -403,3 +403,42 @@ section {
 @media (max-width: 900px) {
   .shell-inner { padding: 0 20px; }
 }
+
+@media (max-width: 560px) {
+  :root {
+    --nav-height: 70px;
+  }
+  
+  .shell-inner { 
+    padding: 0 14px; 
+  }
+  
+  section { 
+    padding: 16px 0; 
+  }
+  
+  .page-hero {
+    padding: 24px 0 32px;
+  }
+  
+  .page-hero h1 {
+    font-size: clamp(28px, 8vw, 42px);
+  }
+  
+  .page-hero > p {
+    font-size: 13.5px;
+    margin-bottom: 24px;
+    padding: 10px 14px;
+    width: 100%;
+  }
+
+  .banner-title {
+    font-size: clamp(26px, 7vw, 38px) !important;
+  }
+  
+  .banner-subtitle {
+    font-size: 13.5px !important;
+    margin-bottom: 32px !important;
+  }
+}
+

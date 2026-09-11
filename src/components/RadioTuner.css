@@ -423,6 +423,10 @@
 @media (max-width: 520px) {
   .freq-mark { font-size: 9px; }
   .band-label { font-size: 12px; }
+  .tuner-face {
+    padding: 0 12px 14px;
+    gap: 12px;
+  }
   .tuner-controls-row {
     flex-direction: column;
     align-items: center;
@@ -431,4 +435,14 @@
   .tuner-status-box {
     width: 100%;
   }
+  .tuner-tagline-text {
+    font-size: 13.5px;
+    white-space: normal;
+    text-align: center;
+  }
+  .tagline-deco-left,
+  .tagline-deco-right {
+    max-width: 40px;
+  }
 }
+

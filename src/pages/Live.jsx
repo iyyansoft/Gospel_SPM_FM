@@ -30,7 +30,6 @@ export default function Live() {
             alignItems: 'stretch',
             maxWidth: '1240px',
             margin: '0 auto -30px',
-            transform: 'scale(0.92)',
             transformOrigin: 'top center',
           }}
           className="live-grid"
@@ -42,9 +41,15 @@ export default function Live() {
         </div>
         <style>{`
           @media (max-width: 900px) {
-            .live-grid { grid-template-columns: 1fr !important; }
+            .live-grid { 
+              grid-template-columns: 1fr !important;
+              gap: 24px !important;
+              transform: none !important;
+              margin-bottom: 0 !important;
+            }
           }
         `}</style>
+
       </section>
 
       <section className="shell-inner dashboard-channels-section">

@@ -166,10 +166,28 @@
   .player-scripture-grid {
     grid-template-columns: 1fr;
     justify-items: center;
-    gap: 40px;
+    gap: 32px;
   }
   .section-title-gold {
     text-align: center;
     justify-content: center;
   }
 }
+
+@media (max-width: 768px) {
+  .dashboard-channels-section {
+    margin-top: 36px !important;
+  }
+  .player-scripture-grid {
+    margin: 16px auto 32px;
+    gap: 24px;
+  }
+  .section-divider {
+    margin: 20px 0 16px;
+    gap: 12px;
+  }
+  .divider-text {
+    font-size: 16px;
+  }
+}
+

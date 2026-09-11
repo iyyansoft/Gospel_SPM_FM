@@ -421,3 +421,55 @@
     display: none;
   }
 }
+
+@media (max-width: 560px) {
+  .split-active-card {
+    padding: 12px 14px;
+  }
+  .active-top-content {
+    gap: 12px;
+  }
+  .active-logo-circle {
+    width: 85px;
+    height: 85px;
+  }
+  .active-station-title {
+    font-size: 13.5px;
+  }
+  .active-freq-digits {
+    font-size: 17px;
+  }
+  .active-desc-text {
+    font-size: 10px;
+    margin-top: 3px;
+  }
+  .inactive-deck-item {
+    padding: 10px 12px;
+  }
+  .inactive-logo-avatar-wrapper {
+    width: 65px;
+    height: 65px;
+  }
+  .inactive-name {
+    font-size: 12px;
+  }
+  .inactive-freq-digits {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .active-top-content {
+    gap: 8px;
+  }
+  .active-logo-circle {
+    width: 72px;
+    height: 72px;
+  }
+  .active-circle-toggle {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+}
+

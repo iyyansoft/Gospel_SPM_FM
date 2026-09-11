@@ -45,7 +45,7 @@ export default function Contact() {
                 <div className="contact-badge-icon">
                   <FiUser />
                 </div>
-                <div>
+                <div className="contact-info-body">
                   <span className="contact-field-label">Contact Person</span>
                   <span className="contact-person-name">BRO Ebenezer Daniel</span>
                 </div>
@@ -56,7 +56,7 @@ export default function Contact() {
                 <div className="contact-badge-icon">
                   <FiMapPin />
                 </div>
-                <div>
+                <div className="contact-info-body">
                   <span className="contact-field-label">Location Address</span>
                   <div className="contact-address-text">
                     88/42 Brindavan Nagar, 5th Street,<br />
@@ -71,7 +71,7 @@ export default function Contact() {
                 <div className="contact-badge-icon">
                   <FiPhone />
                 </div>
-                <div>
+                <div className="contact-info-body">
                   <span className="contact-field-label">Phone & Helpline Numbers</span>
                   <div className="contact-phone-chips">
                     <a href="tel:+919840857022" className="contact-phone-chip">
@@ -107,6 +107,7 @@ export default function Contact() {
                 </div>
               </div>
             </div>
+
           </div>
         </div>
 
