@@ -54,8 +54,9 @@ export default function ChannelCard({ channel, index = 0 }) {
         onClick={handleCardClick}
         style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
       >
-        <FiPlay /> Listen Live
+        <FiPlay style={{ marginRight: 6 }} /> LISTEN LIVE
       </a>
+
     </TiltCard>
   )
 }
