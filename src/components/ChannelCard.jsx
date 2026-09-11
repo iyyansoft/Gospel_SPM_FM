@@ -34,9 +34,15 @@ export default function ChannelCard({ channel, index = 0 }) {
       transition={{ duration: 0.45, delay: index * 0.08 }}
       onClick={handleCardClick}
     >
-      <div className="channel-icon">
-        <Icon />
-      </div>
+      {channel.logo ? (
+        <div className="channel-logo-wrapper">
+          <img src={channel.logo} alt={channel.name} className="channel-logo-img" />
+        </div>
+      ) : (
+        <div className="channel-icon">
+          <Icon />
+        </div>
+      )}
       <h3 className="channel-name">{channel.name}</h3>
       <p className="channel-tagline">{channel.tagline}</p>
       <p className="channel-desc">{channel.description}</p>

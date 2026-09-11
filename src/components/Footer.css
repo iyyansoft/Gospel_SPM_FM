@@ -33,3 +33,60 @@
   margin: 0 8px;
   color: rgba(255, 255, 255, 0.12);
 }
+
+.footer-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-dev-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif);
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+}
+
+.footer-dev-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 77, 141, 0.4);
+  box-shadow: 0 4px 15px rgba(255, 77, 141, 0.2);
+  transform: translateY(-1px);
+}
+
+.dev-by-text {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.2px;
+}
+
+.dev-heart-icon {
+  width: 15px;
+  height: 15px;
+  stroke: #ff3b81;
+  filter: drop-shadow(0 0 4px rgba(255, 59, 129, 0.6));
+  transition: transform 0.2s ease;
+}
+
+.footer-dev-link:hover .dev-heart-icon {
+  transform: scale(1.18);
+  stroke: #ff5294;
+}
+
+.dev-brand-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+

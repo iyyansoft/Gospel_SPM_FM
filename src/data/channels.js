@@ -1,6 +1,10 @@
 import logoPrayer from '../assets/logo_prayer.png'
 import logoMusic from '../assets/logo_music.png'
 import logoPraise from '../assets/logo_praise.png'
+import logoGospelLiveHd from '../assets/logo_gospellive_hd.png'
+import logoBibleHd from '../assets/logo_bible_hd.png'
+import logoGospelTvHd from '../assets/logo_gospeltv_hd.png'
+import logoChurchLiveHd from '../assets/logo_churchlive_hd.png'
 
 // Home Page FM Channels (Prayer FM, Music FM, Praise FM)
 export const channels = [
@@ -45,15 +49,15 @@ export const channels = [
   },
 ]
 
-// Channels Page Channels (Gospellive, BIBLE, Gospeltv)
+// Channels Page Channels (CHURCH LIVE, BIBLE, GOSPELTV)
 export const channelsPageList = [
   {
     id: 'gospellive',
-    name: 'Gospellive',
+    name: 'CHURCH LIVE',
     tagline: '24/7 Live Stream',
-    description: 'Tune in to Gospellive for uplifting prayers, powerful messages, and inspirational worship. Strengthen your faith and grow closer to God every day.',
+    description: 'Tune in to CHURCH LIVE for uplifting prayers, powerful messages, and inspirational worship. Strengthen your faith and grow closer to God every day.',
     icon: 'pray',
-    logo: logoPrayer,
+    logo: logoChurchLiveHd,
     image: '/main_bg_exact_v2.jpg',
     accent: '#f5b942', // Gold
     accentSoft: 'rgba(245, 185, 66, 0.14)',
@@ -66,7 +70,7 @@ export const channelsPageList = [
     tagline: '24/7 Scripture & Gospel',
     description: 'Tune in to BIBLE for uplifting music, powerful messages, and inspirational worship. Strengthen your faith and grow closer to God every day.',
     icon: 'music',
-    logo: logoMusic,
+    logo: logoBibleHd,
     image: '/bible_lantern.jpg',
     accent: '#a855f7', // Purple
     accentSoft: 'rgba(168, 85, 247, 0.14)',
@@ -75,11 +79,11 @@ export const channelsPageList = [
   },
   {
     id: 'gospeltv',
-    name: 'Gospeltv',
+    name: 'GOSPELTV',
     tagline: '24/7 Gospel Television',
-    description: 'Tune in to Gospeltv for uplifting praise, powerful messages, and inspirational worship. Strengthen your faith and grow closer to God every day.',
+    description: 'Tune in to GOSPELTV for uplifting praise, powerful messages, and inspirational worship. Strengthen your faith and grow closer to God every day.',
     icon: 'cross',
-    logo: logoPraise,
+    logo: logoGospelTvHd,
     image: '/main_bg_heavenly.jpg',
     accent: '#3b82f6', // Blue
     accentSoft: 'rgba(59, 130, 246, 0.14)',
