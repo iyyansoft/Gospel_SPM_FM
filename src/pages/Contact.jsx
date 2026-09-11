@@ -83,16 +83,6 @@ export default function Contact() {
                       <FiPhone style={{ color: '#f5b942' }} />
                       +91 98401 37167
                     </a>
-
-                    <a
-                      href="https://wa.me/919840857022"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="contact-phone-chip contact-wa-chip"
-                    >
-                      <FaWhatsapp />
-                      WhatsApp Chat
-                    </a>
                   </div>
 
                   {/* Compact WhatsApp QR Code Card */}
