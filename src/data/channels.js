@@ -98,7 +98,7 @@ export const socialLinks = [
   { id: 'facebook', label: 'Facebook', url: 'https://www.facebook.com/spmgospelfm' },
   { id: 'youtube', label: 'YouTube', url: 'https://www.youtube.com/@spmgospelfm7223' },
   { id: 'instagram', label: 'Instagram', url: 'https://instagram.com' },
-  { id: 'twitter', label: 'Twitter / X', url: 'https://x.com' },
+  { id: 'twitter', label: 'Twitter / X', url: 'https://x.com/gospel5365' },
   { id: 'whatsapp', label: 'WhatsApp', url: 'https://wa.me/919840857022' },
 ]
 

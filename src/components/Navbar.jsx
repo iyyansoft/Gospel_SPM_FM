@@ -9,7 +9,6 @@ const NAV_LINKS = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About Us' },
   { to: '/channels', label: 'Channels' },
-  { to: '/tv', label: 'TV' },
   { to: '/app', label: 'Mobile App' },
   { to: '/contact', label: 'Contact' },
 ]
