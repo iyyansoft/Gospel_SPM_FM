@@ -78,11 +78,6 @@ export default function Contact() {
                       <FiPhone style={{ color: '#f5b942' }} />
                       +91 98408 57022
                     </a>
-
-                    <a href="tel:+919840137167" className="contact-phone-chip">
-                      <FiPhone style={{ color: '#f5b942' }} />
-                      +91 98401 37167
-                    </a>
                   </div>
 
                   {/* Compact WhatsApp QR Code Card */}
