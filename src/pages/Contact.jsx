@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { FiUser, FiMapPin, FiPhone, FiChevronRight } from 'react-icons/fi'
 import { FaFacebookF, FaYoutube, FaInstagram, FaXTwitter, FaWhatsapp } from 'react-icons/fa6'
 import { socialLinks } from '../data/channels.js'
+import whatsappQrCard from '../assets/whatsapp_qr_card.png'
 import './Contact.css'
 
 const SOCIAL_CONFIG = {
@@ -91,6 +92,31 @@ export default function Contact() {
                     >
                       <FaWhatsapp />
                       WhatsApp Chat
+                    </a>
+                  </div>
+
+                  {/* Compact WhatsApp QR Code Card */}
+                  <div className="contact-qr-wrapper">
+                    <a
+                      href="https://wa.me/919840857022"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="contact-qr-card-link"
+                      title="Scan QR or Click to Chat on WhatsApp"
+                    >
+                      <img
+                        src={whatsappQrCard}
+                        alt="Gospel TV Ebenezer WhatsApp Contact QR Code"
+                        className="contact-qr-img"
+                      />
+                      <div className="contact-qr-info">
+                        <span className="contact-qr-title">
+                          <FaWhatsapp /> Gospel TV Ebenezer
+                        </span>
+                        <span className="contact-qr-sub">
+                          Scan code with WhatsApp camera or click to chat directly
+                        </span>
+                      </div>
                     </a>
                   </div>
                 </div>
