@@ -96,7 +96,7 @@ export const tvChannels = [
 
 export const socialLinks = [
   { id: 'facebook', label: 'Facebook', url: 'https://www.facebook.com/spmgospelfm' },
-  { id: 'youtube', label: 'YouTube', url: 'https://www.youtube.com/@spmgospelfm7223' },
+  { id: 'youtube', label: 'YouTube', url: 'https://youtube.com/@gospeltvindia?si=Kb-T_gyQt7E9UX3W' },
   { id: 'instagram', label: 'Instagram', url: 'https://www.instagram.com/gospeltvebi/' },
   { id: 'twitter', label: 'Twitter / X', url: 'https://x.com/gospel5365' },
   { id: 'whatsapp', label: 'WhatsApp', url: 'https://wa.me/919840857022' },
